@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <div id="possibilities"></div>
+        <button onclick="proposeWord()">propose</button>
+    </div>
+
+    <div>
+        <button onclick="lookForWords()">show results</button>
+        <div id="results"></div>
+    </div>
+
+    <button onclick="window.location.href = ''">reload</button>
+
+    <div>
+        <div class="word-inputs">
+            <div>
+                <input type="text" value="A" maxlength="1" data-type="notpresent" name="" id="letter-1" class="word-letter"><br>
+                <button onclick="changeCharType(this)"><</button>
+            </div>
+            <div>
+                <input type="text" value="D" maxlength="1" data-type="notpresent" name="" id="letter-2" class="word-letter"><br>
+                <button onclick="changeCharType(this)"><</button>
+            </div><div>
+                <input type="text" value="I" maxlength="1" data-type="notpresent" name="" id="letter-3" class="word-letter"><br>
+                <button onclick="changeCharType(this)"><</button>
+            </div><div>
+                <input type="text" value="E" data-type="notpresent" maxlength="1" name="" id="letter-4" class="word-letter"><br>
+                <button onclick="changeCharType(this)"><</button>
+            </div><div>
+                <input type="text" value="U" maxlength="1" data-type="notpresent" name="" id="letter-5" class="word-letter"><br>
+                <button onclick="changeCharType(this)"><</button>
+            </div>
+        </div>
+    </div>
+    <button onclick="addCharNew().then(() => {updateTableNew(); proposeWord(); calculatePossibilities()})">ADD</button>
+    
+
+    <div id="char-data-visualization">
+        <div id="keyword-show">
+            <div class="letter">?</div>
+            <div class="letter">?</div>
+            <div class="letter">?</div>
+            <div class="letter">?</div>
+            <div class="letter">?</div>
+        </div>
+            <div id="chars-notpresent" class="chars-table">
+            </div>
+            <div id="chars-present" class="chars-table">
+            </div>
+    </div>
+</body>
+</html>
